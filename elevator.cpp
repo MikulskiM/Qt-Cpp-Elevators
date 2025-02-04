@@ -15,6 +15,11 @@ Direction Elevator::getDirection() {
 Status Elevator::getStatus() {
     return status;
 }
+
+int Elevator::getCurrentFloor() {
+    return currentFloor;
+}
+
 void Elevator::setDirection(Direction newDirection) {
     direction = newDirection;
 }

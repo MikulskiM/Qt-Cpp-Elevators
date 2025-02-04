@@ -17,13 +17,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     elevator.cpp \
+    elevatormanager.cpp \
+    floor.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     direction.h \
     elevator.h \
+    elevatormanager.h \
+    floor.h \
     mainwindow.h \
+    request.h \
     status.h
 
 FORMS += \

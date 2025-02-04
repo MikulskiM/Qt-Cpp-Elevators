@@ -6,6 +6,8 @@
 #include "direction.h"
 #include "status.h"
 
+#define MOVE_STEP_SIZE 5
+
 class Elevator
 {
     int id;
@@ -19,6 +21,7 @@ public:
 
     Direction getDirection();
     Status getStatus();
+    int getCurrentFloor();
 
     void setDirection(Direction newDirection);
     void setStatus(Status newStatus);
