@@ -1,13 +1,5 @@
 #include "elevator.h"
 
-Elevator::Elevator(int id_) {
-    id              = id_;
-    currentFloor    = 0;
-    targetFloors    = {};
-    direction       = IDLE;
-    status          = AVAILABLE;
-}
-
 Direction Elevator::getDirection() {
     return direction;
 }
@@ -18,6 +10,10 @@ Status Elevator::getStatus() {
 
 int Elevator::getCurrentFloor() {
     return currentFloor;
+}
+
+int Elevator::getId() {
+    return id;
 }
 
 void Elevator::setDirection(Direction newDirection) {

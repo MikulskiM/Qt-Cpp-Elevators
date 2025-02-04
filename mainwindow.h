@@ -13,13 +13,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr, ElevatorManager* manager = nullptr);
     ~MainWindow();
+    void moveElevator(QFrame* elevator, Direction direction);
 
 private slots:
     void on_pushButton0_3_clicked();
 
 private:
     Ui::MainWindow *ui;
+    ElevatorManager* elevatorManager;
 };
 #endif // MAINWINDOW_H

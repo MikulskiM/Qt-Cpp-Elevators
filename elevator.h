@@ -3,6 +3,8 @@
 
 #include <list>
 #include <iostream>
+#include <QFrame>
+
 #include "direction.h"
 #include "status.h"
 
@@ -10,18 +12,21 @@
 
 class Elevator
 {
-    int id;
-    int currentFloor;
-    std::list<int> targetFloors;
-    Direction direction = IDLE;
-    Status status       = AVAILABLE;
+    int             id;
+    int             currentFloor;
+    std::list<int>  targetFloors;
+    Direction       direction;
+    Status          status;
+    QFrame*         elevatorObject;
 
 public:
-    Elevator(int id_);
+    Elevator(int id_, QFrame* elevator_)
+        : id(id_), currentFloor(0), targetFloors({}), direction(IDLE), status(AVAILABLE), elevatorObject(elevator_) {}
 
     Direction getDirection();
     Status getStatus();
     int getCurrentFloor();
+    int getId();
 
     void setDirection(Direction newDirection);
     void setStatus(Status newStatus);
