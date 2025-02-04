@@ -15,6 +15,7 @@ public:
     ElevatorManager();
     void assignElevator(Request request);
     void addRequest(Request request);
+    void addElevator(Elevator elevator);
 };
 
 #endif // ELEVATORMANAGER_H

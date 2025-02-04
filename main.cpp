@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "floor.h"
 
 #include <QApplication>
 
@@ -7,8 +6,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     ElevatorManager elevatorManager;
-
     MainWindow w(nullptr, &elevatorManager);
+
     w.show();
 
     Floor floor0(0, FLOOR_0_Y, &elevatorManager);
@@ -18,7 +17,9 @@ int main(int argc, char *argv[])
     Floor floor4(4, FLOOR_4_Y, &elevatorManager);
     Floor floor5(5, FLOOR_5_Y, &elevatorManager);
 
-//    Elevator elevator1(1, w.ui->elevator1
+    elevatorManager.addElevator(Elevator(1, w.getElevatorFrame(1)));
+    elevatorManager.addElevator(Elevator(2, w.getElevatorFrame(2)));
+    elevatorManager.addElevator(Elevator(3, w.getElevatorFrame(3)));
 
     return a.exec();
 }

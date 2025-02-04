@@ -24,8 +24,30 @@ void MainWindow::on_pushButton0_3_clicked()
 
 void MainWindow::moveElevator(QFrame* elevator, Direction direction)
 {
-    std::cout << "elevator: " << elevator << "\n";
-    std::cout << "direction: " << direction << "\n";
+    int step;
 
-    ui->elevator1->move(ui->elevator1->x(), ui->elevator1->y() - 5);
+    if (direction == UP) {
+        std::cout << "Moving up\n";
+        step = -MOVE_STEP_SIZE;
+    } else {
+        std::cout << "Moving down\n";
+        step = MOVE_STEP_SIZE;
+    }
+
+    elevator->move(elevator->x(), elevator->y() + step);
+}
+
+QFrame* MainWindow::getElevatorFrame(int elevatorId)
+{
+    switch (elevatorId) {
+        case 1: return ui->elevator1;
+        case 2: return ui->elevator2;
+        case 3: return ui->elevator3;
+        default: return nullptr;
+    }
+}
+
+void MainWindow::on_pushButton5_5_clicked()
+{
+
 }

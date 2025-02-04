@@ -76,3 +76,7 @@ void ElevatorManager::addRequest(Request request) {
     std::cout << "Adding request(0, 3) to pending requests\n";
     assignElevator(request);
 }
+
+void ElevatorManager::addElevator(Elevator elevator) {
+    elevators.push_back(elevator);
+}
