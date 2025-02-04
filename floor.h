@@ -8,17 +8,16 @@
 #define FLOOR_4_Y 170
 #define FLOOR_5_Y 60
 
-#include "elevatormanager.h"
-
 class Floor
 {
     int floorNumber;
     int floorUIHeight;
-    ElevatorManager* elevatorManager;
 public:
-    Floor(int floorNumber_, int floorUIHeight_, ElevatorManager* manager)
-        : floorNumber(floorNumber_), floorUIHeight(floorUIHeight_), elevatorManager(manager) {}
-    void requestElevator(int floor);
+    Floor(int floorNumber_, int floorUIHeight_)
+        : floorNumber(floorNumber_), floorUIHeight(floorUIHeight_) {}
+
+    int getFloorNumber() const { return floorNumber; }
+    int getFloorUIHeight() const { return floorUIHeight; }
 };
 
 #endif // FLOOR_H

@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMap>
+#include <QPushButton>
+
 #include "elevatormanager.h"
 #include "floor.h"
 
@@ -20,12 +23,11 @@ public:
     QFrame* getElevatorFrame(int elevatorId);
 
 private slots:
-    void on_pushButton0_3_clicked();
-
-    void on_pushButton5_5_clicked();
+    void handleButtonClicked();
 
 private:
     Ui::MainWindow *ui;
     ElevatorManager* elevatorManager;
+    QMap<QPushButton*, QPair<int, int>> buttonToRequestMap; // maping buttons
 };
 #endif // MAINWINDOW_H

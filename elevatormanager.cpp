@@ -73,7 +73,7 @@ void ElevatorManager::assignElevator(Request request) {
 void ElevatorManager::addRequest(Request request) {
     // pendingRequests.push(request);
     // pendingRequests.pop
-    std::cout << "Adding request(0, 3) to pending requests\n";
+    // std::cout << "Adding request(0, 3) to pending requests\n";
     assignElevator(request);
 }
 

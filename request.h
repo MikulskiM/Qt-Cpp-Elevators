@@ -9,33 +9,28 @@ class Request
     int startFloor;
     int targetFloor;
     Direction direction;
-    bool isAssigned;
+    bool isValid;
 
 public:
-    Request(int startFloor_, int targetFloor_) {
-        startFloor = startFloor_;
-        targetFloor = targetFloor_;
-
+    Request(int startFloor_, int targetFloor_)
+            : startFloor(startFloor_), targetFloor(targetFloor_), isValid(true)
+    {
         if (startFloor_ > targetFloor_) {
             direction = DOWN;
         }
         else if (startFloor_ < targetFloor_) {
             direction = UP;
-        } else {
-            std::cout << "\n\tRequest cancelled. Start floor = Target floor\n";
-            throw direction;
         }
-
-        isAssigned = false;
+        else {
+            std::cout << "Request cancelled. Start floor == Target floor\n";
+            isValid = false;  // Set this request as invalid to later throw exception
+        }
     }
 
-    int getTargetFloor() {
-        return targetFloor;
-    }
+    bool isValidRequest() { return isValid; }
 
-    int getStartFloor() {
-        return startFloor;
-    }
+    int getTargetFloor() { return targetFloor; }
+    int getStartFloor() { return startFloor; }
 };
 
 #endif // REQUEST_H
